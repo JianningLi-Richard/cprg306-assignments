@@ -88,7 +88,7 @@ export default function NewItem() {
             </div>
 
             <button 
-                type="submit" disabled={!name || name.length < 2}
+                type="submit" disabled={!name}
                 className="w-full bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg transition duration-200 disabled:bg-gray-400 disabled:cursor-not-allowed disabled:hover:bg-gray-400"
             >
                 Add Item
