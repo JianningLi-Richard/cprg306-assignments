@@ -10,6 +10,8 @@ export default function HomePage() {
       <a href="/week-4">Go to Week 4</a>
       <br/>
       <a href="/week-5">Go to Week 5</a>
+      <br/>
+      <a href="/week-6">Go to Week 6</a>
     </main>
   );
 } 
