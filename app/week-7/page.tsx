@@ -26,14 +26,12 @@ export default function Page() {
   }
 
   function handleItemSelect(itemName: string) {
-    // Clean up the item name by removing size/weight info and emojis
+    // Clean up the item name by removing emojis and size/weight info
     const cleanedName = itemName
-      .split(',')
-      .map(part => part.trim())
-      .at(0) || ''
-      .toLowerCase()
-      .replace(/(\u{1F300}-\u{1F9FF}|\u{2600}-\u{27BF}|\u{2300}-\u{23FF}|\u{2000}-\u{206F}|\u{3000}-\u{303F})/gu, '')
-      .trim();
+      .replace(/[\p{Emoji_Presentation}\p{Extended_Pictographic}]/gu, "")
+      .split(",")[0]
+      .trim()
+      .toLowerCase();
     
     setSelectedItemName(cleanedName);
   }
