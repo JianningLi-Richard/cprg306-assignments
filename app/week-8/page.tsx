@@ -1,6 +1,7 @@
 "use client";
 
 import { useUserAuth } from "./_utils/auth-context";
+import Link from "next/link";
 
 export default function Page() {
   const { user, gitHubSignIn, firebaseSignOut } = useUserAuth();
@@ -8,14 +9,17 @@ export default function Page() {
   return (
     <div>
       {user ? (
-        <p>
-          Welcome, {user.displayName} ({user.email})
-        </p>
+        <>
+          <p>
+            Welcome, {user.displayName} ({user.email})
+          </p>
+          <button onClick={() => firebaseSignOut()}>Sign out</button><br/>
+          <Link href="/week-7">
+            <button>Shopping List</button>
+          </Link>
+        </>
       ) : (
         <button onClick={() => gitHubSignIn()}>Sign in with GitHub</button>
-      )}
-      {user && (
-        <button onClick={() => firebaseSignOut()}>Sign out</button>
       )}
     </div>
   );
