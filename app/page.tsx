@@ -1,4 +1,3 @@
-
 export default function HomePage() {
   return (
     <main>
@@ -16,6 +15,8 @@ export default function HomePage() {
       <a href="/week-7">Go to Week 7</a>
       <br/>
       <a href="/week-8">Go to Week 8</a>
+      <br/>
+      <a href="/week-10">Go to Week 10</a>
     </main>
   );
 } 
