@@ -23,7 +23,7 @@ export default function Page() {
 
   useEffect(() => {
     if (!user) {
-      router.push("/week-8");
+      router.push("/week-10");
     }
   }, [user, router]);
 
