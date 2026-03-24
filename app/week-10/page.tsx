@@ -11,7 +11,9 @@ export default function Page() {
       {user ? (
         <>
           <p>
-            Welcome, {user.displayName} ({user.email})
+            Welcome, {user.displayName ??
+                user?.providerData?.[0]?.displayName ??
+                (user?.email ? user.email.split('@')[0] : 'User')} ({user.email})
           </p>
           <button onClick={() => firebaseSignOut()}>Sign out</button><br/>
           <Link href="/week-10/shopping-list">
